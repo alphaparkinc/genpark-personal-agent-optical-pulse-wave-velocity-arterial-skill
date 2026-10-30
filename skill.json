@@ -1,0 +1,58 @@
+{
+  "name": "genpark-personal-agent-optical-pulse-wave-velocity-arterial-skill",
+  "version": "1.0.0",
+  "title": "PPG Pulse Wave Velocity (baPWV) & Biological Vascular Age Skill",
+  "description": "Photoplethysmography (PPG) pulse transit time (PTT), pulse wave velocity (baPWV m/s), and biological vascular age calibration. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "personal-agent",
+  "topics": [
+    "pulse-wave-velocity",
+    "arterial-stiffness",
+    "vascular-age",
+    "ppg-telemetry",
+    "personal-agent",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "compute_pulse_wave_velocity_and_vascular_age",
+      "description": "Calculate estimated Brachial-Ankle Pulse Wave Velocity (baPWV m/s) and biological vascular age from PPG transit time and blood pressure.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "pulse_transit_time_ms": {
+            "type": "number"
+          },
+          "systolic_bp": {
+            "type": "number"
+          },
+          "chronological_age": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "pulse_transit_time_ms",
+          "systolic_bp",
+          "chronological_age"
+        ]
+      }
+    },
+    {
+      "name": "prescribe_arterial_elasticity_reversal_protocol",
+      "description": "Formulate targeted lifestyle and nutraceutical interventions to reverse arterial calcification and restore arterial compliance.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "pwv_m_s": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "pwv_m_s"
+        ]
+      }
+    }
+  ]
+}
